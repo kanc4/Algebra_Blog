@@ -15,7 +15,6 @@ class IndexController extends Controller
     public function index()
     {
 		$posts = Post::orderBy('created_at','DESC')->paginate(20);
-		dd($posts);
         return view('index')->with('posts',$posts);
     }
 

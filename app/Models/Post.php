@@ -37,13 +37,10 @@ class Post extends Model
 	
 	/**
 	* Save Post
-	*
-	*	@param array $post
-	*	@return object
 	*/
 	public function savePost($post)
 	{
-		return $this->fill($post)->save();
+		return $this->create($post);
 	}
 
 	/**
@@ -52,7 +49,7 @@ class Post extends Model
 	*	@param array $post
 	*	@return object
 	*/
-	public function updatePost($post)
+	public static function updatePost($post)
 	{
 		return $this->update($post);
 	}
