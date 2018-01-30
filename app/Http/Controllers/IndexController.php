@@ -14,18 +14,21 @@ class IndexController extends Controller
      */
     public function index()
     {
-		$posts = Post::orderBy('created_at','DESC')->paginate(20);
+		$posts = Post::orderBy('created_at','DESC')->paginate(12);
         return view('index')->with('posts',$posts);
     }
 
     /**
      * Show the form for creating a new resource.
      *
+	 * @param string $slug
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $post = Post::where('slug', $slug)->first();
+		
+		return view('post')->with('post', $post);
     }
 
     /**

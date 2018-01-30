@@ -20,7 +20,7 @@
 			<fieldset>
 				<div class="form-group">
 					<input type="text" class="form-control" name="title" placeholder="Enter post title" value="{{ $post->title }}">
-					{!! ($errors->has('title') ? $errors->first('title', '<p class="text-danger">:message</p>') : '') !!}
+					{!! ($errors->has('title') ? $errors->first('title', '<p class="text-danger">:message</p>')  : '' ) !!}
 				</div>
 				<div class="form-group">
 					<textarea class="form-control" name="content" placeholder="Enter post content" style="max-width:100%; height:250px">{!! $post->content !!}</textarea {! ($errors->has('content') ? $errors->first('content',' <p class*"text-danger">:message)) !}>
